@@ -60,6 +60,13 @@
 			<version>1.2</version>
 		</dependency>
 
+	    <dependency>
+	    	<groupId>org.eclipse.jetty</groupId>
+    		<artifactId>jetty-servlet</artifactId>
+   			<version>9.2.10.v20150310</version>
+    	</dependency>
+
+
 		<!-- Everything Else -->
 		<dependency>
 			<groupId>mysql</groupId>
@@ -88,6 +95,28 @@
 					<target>1.6</target>
 				</configuration>
 			</plugin>
+			      <plugin>
+        				<groupId>org.apache.maven.plugins</groupId>
+				        <artifactId>maven-dependency-plugin</artifactId>
+				        <version>2.4</version>
+				        <executions>
+				          <execution>
+				            <id>copy-dependencies</id>
+				            <phase>package</phase>
+				            <goals><goal>copy-dependencies</goal></goals>
+				          </execution>
+				        </executions>
+			      </plugin>
+    
+			<plugin>
+				<groupId>com.heroku.sdk</groupId>
+				<artifactId>heroku-maven-plugin</artifactId>
+				<version>0.3.7</version>
+				<configuration>
+					<appName>obscure-sierra-7788</appName>
+				</configuration>
+			</plugin>
 		</plugins>
+
 	</build>
 </project>
