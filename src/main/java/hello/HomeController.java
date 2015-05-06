@@ -19,9 +19,10 @@ public class HomeController {
    * Everytime invoked, we pass list of all persons to view
    */
   @RequestMapping(method = RequestMethod.GET)
+  @ResponseBody
   public String listAll(Model model) {
-    model.addAttribute("persons", personSvc.getAll());
-    return "home";
+    String test="Hi Guys Mand,Chotu,Kunal And Rustag this is our Sample App Url";
+    return test;
   }
    
   /**
